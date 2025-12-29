@@ -1,0 +1,489 @@
+/* Import Google Fonts for professional look */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #007bff;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007bff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Section (Home only) */
+.hero {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background-color: #fff;
+    color: #007bff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e9ecef;
+}
+
+/* Features Section (Home only) */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.feature h3 {
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        display: none; /* Hidden by default, shown via JS */
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // CTA button alerts (for demo; replace with actual functionality)
+    const ctaButtons = document.querySelectorAll('.btn');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (this.textContent.includes('Telegram')) {
+                alert('Redirecting to Telegram channel...');
+            } else if (this.textContent.includes('Premium')) {
+                alert('Redirecting to Pricing page...');
+            }
+        });
+    });
+});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Stock Market Education - Home</title>
+    <meta name="description" content="Learn smart trading and disciplined learning for the Indian stock market. Educational analysis, risk management, and no guaranteed profits.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Indian Stock Edu</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="analysis.html">Free Analysis</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Smart Trading. Disciplined Learning.</h1>
+            <p>Master the Indian stock market with educational insights on NSE and BSE.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn">Join Free Telegram</a>
+                <a href="pricing.html" class="btn">View Premium Plans</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature">
+                <h3>Educational Analysis</h3>
+                <p>Learn technical and fundamental analysis tailored to Indian markets like Reliance, Infosys, and Tata.</p>
+            </div>
+            <div class="feature">
+                <h3>Risk Management</h3>
+                <p>Understand stop-loss, diversification, and portfolio strategies to minimize losses.</p>
+            </div>
+            <div class="feature">
+                <h3>No Guaranteed Profit</h3>
+                <p>We focus on education; trading involves risks, and past performance doesn't guarantee future results.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Indian Stock Edu. <a href="disclaimer.html">Disclaimer</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Indian Stock Market Education</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Indian Stock Edu</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="analysis.html">Free Analysis</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>About Us</h1>
+        <p>We are a team of experienced traders and educators dedicated to teaching smart trading in the Indian stock market. Our focus is on disciplined learning for NSE and BSE indices.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Indian Stock Edu. <a href="disclaimer.html">Disclaimer</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Indian Stock Market Education</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Indian Stock Edu</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="analysis.html">Free Analysis</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Our Services</h1>
+        <p>We offer educational webinars, market analysis reports, and personalized coaching for Indian stock traders.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Indian Stock Edu. <a href="disclaimer.html">Disclaimer</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Indian Stock Market Education</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Indian Stock Edu</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="analysis.html">Free Analysis</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Pricing / Membership</h1>
+        <p>Free tier: Basic analysis. Premium: ₹999/month for advanced insights on Indian stocks.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Indian Stock Edu. <a href="disclaimer.html">Disclaimer</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Market Analysis - Indian Stock Market Education</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Indian Stock Edu</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="analysis.html">Free Analysis</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Free Market Analysis</h1>
+        <p>Download our free weekly report on NSE trends, including analysis of top Indian stocks.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Indian Stock Edu. <a href="disclaimer.html">Disclaimer</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - Indian Stock Market Education</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Indian Stock Edu</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="analysis.html">Free Analysis</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Disclaimer</h1>
+        <p>This website is for educational and learning purposes only.<br>
+        We
